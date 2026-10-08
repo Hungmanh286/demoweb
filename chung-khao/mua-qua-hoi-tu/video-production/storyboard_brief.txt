@@ -1,0 +1,10 @@
+Create a restrained, emotionally rich 45-second cinematic video storyboard for the concept "Hành trình của một trái ngọt". It is a proposal for an imagined festival, not documentation of an event that has already happened. Do not invent a date, venue, scale, named participating companies, confirmed buyers, sales results, or signed deals.
+
+The story follows one real, non-anthropomorphic ripe mango (oval and slightly curved, warm golden peel, a subtle green area by the stem, one small leaf) as the hero fruit. A thin warm-gold light thread starts along an orchard leaf and links six beats: (1) dawn, dew, mango on tree; (2) a grower checks and lifts the mango; (3) mango, dragon fruit and pomelo, each carrying a sense of place; (4) an illustrative festival tasting where an adult visitor receives a sample and stamps a blank tasting passport; (5) a grower and buyer have a conversation, with no claim that a deal is completed; (6) fruit slices and the gold thread converge into a green-and-gold festival key visual. People are adults, natural and respectful; show hands, profile, or medium shots rather than prolonged close-ups.
+
+Preserve these exact time ranges: 00:00–00:06, 00:06–00:14, 00:14–00:22, 00:22–00:31, 00:31–00:37, 00:37–00:45. Use graphic transitions to connect difficult continuity. The last key visual must hold cleanly for the final three seconds. Do not ask an image or video model to render words; titles will be overlaid in post.
+
+Keep the voice-over verbatim, in Vietnamese:
+"Một trái ngọt bắt đầu từ đâu? Từ đất, từ nắng, từ bàn tay chăm chút qua từng mùa. Mỗi hương vị mang một vùng đất. Mỗi mùa quả lưu một câu chuyện. Hãy đến để nếm, để hiểu, và gặp những người làm nên trái ngọt. Để mỗi cuộc gặp mở thêm cơ hội, mỗi sản phẩm tìm thấy kết nối mới. Festival Trái Cây Việt Nam. Mùa Quả Hội Tụ. Nếm vị bản địa — Kết nối giá trị Việt."
+
+Return a compact Vietnamese JSON storyboard with title, logline, six scenes, visual action, camera movement, transition, on-screen text, and sound notes. Do not change the voice-over or add unconfirmed facts.

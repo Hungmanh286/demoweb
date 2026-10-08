@@ -1,0 +1,17 @@
+{
+  "title": "HÀNH TRÌNH CỦA MỘT TRÁI NGỌT",
+  "duration_seconds": 45,
+  "resolution": "1280x720",
+  "frame_rate": 30,
+  "generated_video_model": "veo-3.1-lite-generate-001",
+  "scenes": [
+    {"id":"scene-01","start":0,"duration":6,"generated_clip_seconds":6,"voice":"Một trái ngọt bắt đầu từ đâu?","screen_text":null},
+    {"id":"scene-02","start":6,"duration":8,"generated_clip_seconds":8,"voice":"Từ đất, từ nắng, từ bàn tay chăm chút qua từng mùa.","screen_text":null},
+    {"id":"scene-03","start":14,"duration":8,"generated_clip_seconds":8,"voice":"Mỗi hương vị mang một vùng đất. Mỗi mùa quả lưu một câu chuyện.","screen_text":"VÙNG ĐẤT · NGƯỜI TRỒNG · HƯƠNG VỊ"},
+    {"id":"scene-04","start":22,"duration":9,"generated_clip_seconds":8,"hold_last_frame_seconds":1,"voice":"Hãy đến để nếm, để hiểu, và gặp những người làm nên trái ngọt.","screen_text":"NẾM · HIỂU · GẶP GỠ"},
+    {"id":"scene-05","start":31,"duration":6,"generated_clip_seconds":6,"voice":"Để mỗi cuộc gặp mở thêm cơ hội, mỗi sản phẩm tìm thấy kết nối mới.","screen_text":null},
+    {"id":"scene-06","start":37,"duration":8,"generated_clip_seconds":8,"voice":"Festival Trái Cây Việt Nam. Mùa Quả Hội Tụ. Nếm vị bản địa — Kết nối giá trị Việt.","screen_text":"FESTIVAL TRÁI CÂY VIỆT NAM / MÙA QUẢ HỘI TỤ / Nếm vị bản địa — Kết nối giá trị Việt."}
+  ],
+  "end_card_hold": {"from_second": 42, "to_second": 45},
+  "disclosure": "Hình ảnh minh họa ý tưởng festival, được tạo với AI."
+}

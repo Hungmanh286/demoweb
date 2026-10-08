@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>Xuất PDF — Mùa Quả Hội Tụ</title>
+  <style>
+    @page { size: 13.333333in 7.5in; margin: 0; }
+    * { box-sizing: border-box; }
+    html, body { width: 1280px; margin: 0; background: #fff7e8; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    .page { position: relative; width: 1280px; height: 720px; overflow: hidden; page-break-after: always; break-after: page; background: #fff7e8; }
+    .page:last-child { page-break-after: auto; break-after: auto; }
+    .page > img { display: block; width: 1280px; height: 720px; object-fit: fill; }
+    .route { position: absolute; right: 58px; bottom: 65px; left: 58px; display: flex; height: 47px; align-items: center; justify-content: space-between; gap: 9px; padding: 0 13px; color: #fff7e8; background: #164b35; }
+    .route small { display: block; margin-bottom: 3px; color: #f4c542; font-size: 8px; font-weight: 700; letter-spacing: .05em; }
+    .route b { font-size: 10px; line-height: 1.2; }
+    .route > i { color: #f4c542; font-size: 13px; font-style: normal; }
+    .passport-title { position: absolute; top: 112px; right: 58px; left: 58px; height: 155px; padding-top: 8px; color: #fff7e8; background: #164b35; }
+    .passport-title small { display: block; margin-bottom: 10px; color: #c4d1c4; font: 700 11px/1.2 "Noto Sans", Arial, sans-serif; letter-spacing: .12em; }
+    .passport-title h1 { margin: 0; font: 700 42px/1.06 "Noto Sans", Arial, sans-serif; letter-spacing: -.045em; }
+    .passport-title p { margin: 8px 0 0; color: rgba(255,247,232,.78); font: 500 18px/1.35 "Noto Sans", Arial, sans-serif; }
+    .poster-copy { position: absolute; top: 486px; left: 58px; width: 385px; height: 30px; padding-top: 1px; color: #53645a; background: #fff7e8; font: 400 9px/1.2 "Noto Sans", Arial, sans-serif; }
+    .final-line { position: absolute; top: 505px; right: 58px; left: 58px; height: 36px; padding: 1px 0; color: #f4c542; background: #164b35; font: 600 19px/1.25 "Noto Sans", Arial, sans-serif; letter-spacing: -.02em; }
+  </style>
+</head>
+<body>
+  <section class="page"><img src="output/png/slide-01.png" alt="Slide 1"></section>
+  <section class="page"><img src="output/png/slide-02.png" alt="Slide 2"></section>
+  <section class="page"><img src="output/png/slide-03.png" alt="Slide 3"></section>
+  <section class="page"><img src="output/png/slide-04.png" alt="Slide 4">
+    <div class="route" aria-label="Luồng tham quan đề xuất">
+      <div><small>LỐI VÀO</small><b>Nhận hộ chiếu</b></div><i>→</i>
+      <b>01 · Bản đồ Mùa Quả</b><i>→</i><b>02 · Gặp Người Giữ Mùa</b><i>→</i>
+      <b>03 · Thử Vị</b><i>→</i><b>04 · Bếp Sáng Tạo</b><i>→</i><b>05 · Chợ Kết Nối</b>
+    </div>
+  </section>
+  <section class="page"><img src="output/png/slide-05.png" alt="Slide 5"></section>
+  <section class="page"><img src="output/png/slide-06.png" alt="Slide 6">
+    <header class="passport-title"><small>ĐIỂM ĐỘC ĐÁO</small><h1>Hộ chiếu Vị Việt</h1><p>Mỗi trải nghiệm, một dấu kết nối. Một hành trình đưa khách từ người tham quan thành người khám phá.</p></header>
+  </section>
+  <section class="page"><img src="output/png/slide-07.png" alt="Slide 7"></section>
+  <section class="page"><img src="output/png/slide-08.png" alt="Slide 8"></section>
+  <section class="page"><img src="output/png/slide-09.png" alt="Slide 9">
+    <div class="poster-copy">Khám phá vùng trồng · Gặp người giữ mùa · Thưởng thức trái ngọt · Kết nối sản phẩm Việt.</div>
+  </section>
+  <section class="page"><img src="output/png/slide-10.png" alt="Slide 10">
+    <div class="final-line">Festival không chỉ đưa trái cây đến gần người tiêu dùng — mà còn đưa giá trị phía sau trái cây đến gần thị trường.</div>
+  </section>
+</body>
+</html>

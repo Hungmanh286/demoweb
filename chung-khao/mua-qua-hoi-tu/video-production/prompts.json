@@ -1,0 +1,43 @@
+{
+  "style": "Cinematic, emotionally grounded Vietnamese agricultural documentary, photorealistic people and fruit with restrained graphic magic, premium natural color, warm sunrise gold against deep orchard greens, gentle camera movement, soft film grain, natural skin and fruit texture. Wide horizontal 16:9 composition. Never show written text, logos, signs, subtitles, watermark, cartoon faces, eyes, mouths, arms, or legs on fruit. No brand marks.",
+  "hero_mango": "The recurring hero fruit is one ripe oval mango, slightly curved, warm golden yellow peel with a subtle green blush beside the stem and one small fresh leaf. Keep its size, silhouette, color and leaf consistent. The mango is a real object and has no face or limbs.",
+  "character_reference": "Photorealistic character reference image, three subjects standing separately against a simple deep orchard-green studio background with soft natural light: (1) one ripe oval mango, slightly curved, warm golden-yellow peel with a subtle green blush at the stem and one small green leaf, no face or limbs; (2) one adult Vietnamese grower with a calm, capable presence, wearing a clean plain olive-green work shirt and dark neutral trousers; (3) one adult festival visitor/buyer in understated contemporary beige clothing. Natural human proportions and faces, consistent wardrobe, respectful documentary casting, clear full-length silhouettes, no props except the mango, no text, no logos.",
+  "scenes": [
+    {
+      "id": "scene-01",
+      "seconds": 6,
+      "keyframe": "Cinematic close-up documentary still at dawn in a lush mango orchard in Vietnam. A single ripe oval mango, slightly curved, warm golden yellow peel with a subtle green blush beside the stem and one small fresh green leaf, still attached to the tree among dew-covered leaves. Gentle amber sunrise rays, shallow depth of field, realistic fruit skin and leaf veins. Quiet, intimate, premium natural-light film look. Keep the fruit large and clearly readable in a 16:9 frame. No people, no words, no logos.",
+      "video": "A slow cinematic macro push-in toward the same single ripe oval mango, slightly curved, warm golden yellow peel with subtle green near the stem and one small leaf, attached to a branch in a lush Vietnamese orchard at dawn. A dew drop falls from a nearby leaf; the mango and leaves move only slightly in a light breeze. A delicate thin warm-gold light thread appears along one leaf vein and softly leads the eye toward the mango. Photorealistic, restrained natural movement, no magical transformation. No text, no speech, no music, no logos; natural leaf rustle and soft morning ambience only."
+    },
+    {
+      "id": "scene-02",
+      "seconds": 8,
+      "keyframe": "Photorealistic cinematic close-up of the hands and side profile of one adult Vietnamese mango grower in a clean, simple work shirt, gently lifting the same ripe oval slightly curved golden-yellow mango with a faint green blush near the stem and one small leaf. Orchard background, sunlight filtering through leaves, respectful documentary photography, natural human hands with correct anatomy, shallow depth of field. No text, no logos.",
+      "video": "The grower's hands move slowly and naturally as they inspect and then carefully lift the same ripe oval slightly curved golden mango with subtle green near the stem and one small leaf. Frame mostly the hands, fruit and a partial side profile; avoid a face close-up. Under a warm shaft of sunlight, the thin golden thread glides from the sleeve cuff onto the mango peel, following its curve without changing the fruit. Clean simple work clothes, believable hands, calm documentary camera. No text, no speech, no music, no logos; soft orchard ambience only."
+    },
+    {
+      "id": "scene-03",
+      "seconds": 8,
+      "keyframe": "A tight photorealistic editorial food still life, no people anywhere: on a deep green tabletop, ripe golden mango slices on the left, vivid pink dragon-fruit halves in the center, and pale pomelo segments on the right. Separate clear silhouettes, natural cut fruit textures, warm soft side light, dark green orchard-inspired background, close framing, elegant premium food photography. Absolutely no person, no human figure, no hand, no arm, no face, no text, no logos, no labels, no watermark.",
+      "video": "A cinematic tabletop sequence of ripe mango slices, pink dragon-fruit halves and pale pomelo segments, each fruit presented naturally and separately, with no people or hands. Slow lateral camera glide; the fruit cuts connect by gentle match cuts. A thin warm-gold light thread travels across the empty tabletop and around the pieces without passing through the fruit. Refined photorealistic food cinematography, no text, no speech, no music, no logos; one soft fruit placement sound only."
+    },
+    {
+      "id": "scene-04",
+      "seconds": 8,
+      "keyframe": "Illustrative but photorealistic concept scene for a Vietnamese fruit festival: a bright, welcoming tasting booth with baskets of local fruit, an adult visitor in neutral modern clothes receiving a small fruit sample from an adult producer in clean simple work clothes. A small blank passport booklet and plain stamp sit on the counter. Lively but not crowded, no identifiable brand, no legible signage, no text or logos.",
+      "video": "A welcoming concept-festival tasting scene, clearly an illustration of an idea rather than a documented event. An adult visitor in neutral modern clothing accepts a small fruit sample from an adult producer in simple clean work clothes; they exchange a warm, attentive glance. Cut to a hand stamping a blank tasting-passport booklet once. A thin gold thread opens into the festival space and curves across the counter. Photorealistic, natural actions, restrained camera, no readable writing, no logos, no speech, no music; light crowd ambience and one clear stamp sound only."
+    },
+    {
+      "id": "scene-05",
+      "seconds": 6,
+      "keyframe": "Photorealistic documentary-style concept still: an adult fruit producer and an adult buyer in neutral business-casual clothing talk attentively across a small table with a few fresh fruit samples. Warm natural light, open body language, no paperwork or contract, no handshake, no logos, no readable text. The scene represents a conversation and a possible connection, not a completed deal.",
+      "video": "An adult fruit producer and an adult buyer continue a friendly, attentive conversation beside neatly arranged fruit samples. Natural gestures, subtle nods, eye contact, no contract signing, no handshake, no claims of a completed transaction. A few fine golden light paths from separate points converge gently between them and lead toward the center. Photorealistic documentary look, no text, no speech, no music, no logos; soft festival ambience fades down."
+    },
+    {
+      "id": "scene-06",
+      "seconds": 8,
+      "keyframe": "Premium fruit-campaign key visual, wide 16:9. Absolutely no people, no human shapes, no hands, no farmers, no trees, no orchard scene. A clean deep forest-green studio background. Exactly three fruit elements arranged into a loose balanced ring around a large, completely clear empty center: several slices of the recurring warm golden mango, vivid pink dragon-fruit halves, and pale pomelo segments. One fine luminous warm-gold thread circles the negative space and gently converges at one point. Luxury food-editorial photography with photorealistic fruit textures, restrained light, elegant composition. The center must remain empty for titles added later. Absolutely no text, letters, symbols, logos, or watermark.",
+      "video": "The fruit slices move with elegant slow graphic motion over a deep orchard-green background. Thin gold light threads from multiple edges converge into one luminous ring around a clear empty center, then settle into a still composition with generous negative space for title lettering to be added in post-production. Premium restrained campaign key visual, no generated words or logos, no speech, no music; soft bright musical tail only."
+    }
+  ]
+}
