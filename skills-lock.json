@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "proposal-writer": {
+      "source": "claude-office-skills/skills",
+      "sourceType": "github",
+      "skillPath": "proposal-writer/SKILL.md",
+      "computedHash": "b37311069029473356b37be76d7fd04e34948ae417b287040c712044b49238e5"
+    },
     "remotion-best-practices": {
       "source": "remotion-dev/skills",
       "sourceType": "github",

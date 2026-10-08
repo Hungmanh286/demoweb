@@ -6,10 +6,10 @@ Ngày kiểm tra: 08-10-2026. Trình duyệt: Google Chrome 136.0.7103.59; Playw
 
 - Cú pháp các module `app.js`, `content.js`, `assets-manifest.js` và `proposal-content.js` hợp lệ theo `node --check`.
 - Nguồn nội dung có đúng 10 slide theo thứ tự; slide 1 là video, slide 2–10 là ảnh. Các mục có tiêu đề, tóm tắt, sections, notes; slide 1 có transcript 6 câu, slide 7 giữ riêng transcript phim concept mở rộng 60 giây.
-- Video `assets/video/intro.mp4` phát được trong Chrome, H.264/AAC, 1280×720, dài 45.013 giây. Poster dùng bìa PNG slide 1. Video có native controls, `preload="metadata"`, không autoplay; phát/dừng được, tự pause khi chuyển slide và không tự phát khi quay lại.
+- Video `assets/video/intro.mp4` phát được trong Chrome, H.264/AAC, 1280×720, dài 45.013 giây. Poster là `assets/video/intro-poster.png`. Trang gốc không gửi request MP4; hero đặt `preload="none"`, còn video trong viewer chỉ nạp metadata khi vào màn hình. Cả hai dùng native controls, không autoplay; video trong viewer phát/dừng được, tự pause khi chuyển slide và không tự phát khi quay lại.
 - WebVTT `assets/video/intro.vi.vtt` tải trong trình duyệt và có 8 cue tiếng Việt. Transcript đầy đủ vẫn nằm trong bản đọc slide.
 - Nút Trước/Sau dừng ở biên; thumbnail, ArrowLeft/ArrowRight, Home/End, deep link, hash không hợp lệ và Back/Forward trình duyệt đều hoạt động.
-- Anchor `#story`, `#experience` và `#proposal` cuộn đến các phần microsite mà không bị bộ định tuyến slide ghi đè.
+- Anchor `#home`, `#intro-video`, `#story`, `#experience` và `#proposal` cuộn đến đúng phần microsite mà không bị bộ định tuyến slide ghi đè.
 - PNG nội dung giữ nguyên khung với `object-fit: contain`. Dialog ảnh mở được, nhận focus, đóng bằng Escape và trả focus về nút mở.
 - Ở 360×800, 768×1024 và 1440×900, stage giữ 16:9 và trang không tràn ngang. Nút trước/sau cao ít nhất 44 px trên mobile.
 - Skip link chuyển focus đến main; `prefers-reduced-motion` được nhận. Có một H1 trang ổn định khi stage hiển thị media đã duyệt.

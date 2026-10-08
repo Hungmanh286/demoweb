@@ -1,0 +1,61 @@
+{
+  "model": "nano-banana-2",
+  "aspect_ratio": "16:9",
+  "style": "Create one complete standalone cinematic editorial photograph for the Vietnamese fruit festival concept Mua Qua Hoi Tu. Landscape 16:9, a single coherent scene, no collage, no panels, no presentation slide, no infographic, no sliced master image. Match a quiet cinematic film: deep orchard green #164B35, warm mango yellow #F4C542, restrained dragon fruit pink #D93B79, natural wood and woven bamboo, soft warm sunlight, realistic tactile fruit and skin, gentle film grain. Vietnamese adults appear candid and respectful, never posed like stock advertising. The recurring hero mango is oval, gently curved, golden with a subtle green patch near its stem. This is an imagined proposal, not documentation of an event. No text, letters, numbers, titles, logos, watermarks, labels, signage, QR codes, certifications, invented named locations or brands. No plastic fruit, excessive saturation, duplicated people, malformed hands or impossible fruit anatomy. No ornamental glowing fantasy effects. Keep the focal action clear and complete, with generous breathing room at the edges.",
+  "images": [
+    {
+      "id": "01-orchard-dawn",
+      "title": "Nơi vị ngọt bắt đầu",
+      "alt": "Một quả xoài vàng trên cành giữa tán lá và ánh nắng sớm trong vườn, hình minh họa AI.",
+      "prompt": "A ripe golden mango still attached to its branch, a small fresh leaf by the stem and dew on surrounding leaves. Close environmental view with the mango just right of center and a real orchard receding into soft deep green. Early morning side light, restrained golden highlights, quiet sense of origin. Botanically believable mango foliage and fruit attachment. Full photographic scene, no graphic elements."
+    },
+    {
+      "id": "02-grower-care",
+      "title": "Bàn tay giữ nhịp mùa",
+      "alt": "Người làm vườn nhẹ nhàng kiểm tra quả xoài trên cây dưới ánh sáng xuyên tán lá, hình minh họa AI.",
+      "prompt": "A middle-aged Vietnamese woman grower in an unbranded beige work shirt and a simple conical hat gently inspecting one golden mango on a low branch. Medium candid side view, hands working naturally, face secondary, softly lit orchard around her. Warm filtered light, lived-in fabric, dignified everyday care. She is checking attached fruit rather than magically pulling it through a branch."
+    },
+    {
+      "id": "03-harvest-table",
+      "title": "Mỗi hương vị, một câu chuyện",
+      "alt": "Xoài, thanh long và bưởi cùng nhãn và chôm chôm được bày trên bàn gỗ với giỏ tre, hình minh họa AI.",
+      "prompt": "An abundant but believable harvest still life on a weathered wooden table at the edge of a Vietnamese orchard. A few ripe golden mangoes, two dragon fruit with one clean half, one pomelo with a few peeled segments, small clusters of longan and rambutan, broad leaves and a woven bamboo basket. Three-quarter view at table level, rich tactile fruit in the foreground, quiet shaded foliage behind, soft midday side light. Distinct recognizable fruit, naturally arranged, not a supermarket display."
+    },
+    {
+      "id": "04-festival-pavilion",
+      "title": "Một cuộc hội tụ giữa sắc xanh",
+      "alt": "Không gian festival ý tưởng có quầy trái cây bằng gỗ, mái che, cây xanh và lối đi thoáng, hình minh họa AI.",
+      "prompt": "A proposed intimate Vietnamese fruit festival pavilion, with airy cream canvas canopies, timber produce counters, bamboo details and leafy shade. A few Vietnamese adult visitors naturally browse and talk. A slightly elevated diagonal wide view shows a believable spacious path between a produce display, grower conversation counter, tasting table, small cooking workshop and quieter buyer meeting corner. Practical reusable materials, accessible unobstructed circulation, no stage spectacle, no text or banners. Daylight with deep green fabric accents."
+    },
+    {
+      "id": "05-guided-tasting",
+      "title": "Nếm chậm để hiểu sâu",
+      "alt": "Người hướng dẫn đưa một đĩa nhỏ có xoài và thanh long cho khách trưởng thành tại bàn thử vị, hình minh họa AI.",
+      "prompt": "A Vietnamese adult tasting guide offers a small ceramic tasting plate to an adult woman visitor at an orchard-shaded timber counter. Golden mango slices, dragon fruit cubes and peeled pomelo segments are clearly separated on clean small plates. Medium close view of the exchange and attentive natural expressions, subtle other visitors out of focus, clean serving utensils and hygienic handling. Warm soft afternoon light, the action is tasting and listening rather than selling. No disposable gloves touching phones, no unrealistic hands."
+    },
+    {
+      "id": "06-tasting-passport",
+      "title": "Mỗi trải nghiệm, một dấu nhớ",
+      "alt": "Bàn tay đóng dấu hình lá lên cuốn hộ chiếu trải nghiệm không chữ cạnh đĩa trái cây, hình minh họa AI.",
+      "prompt": "Close top-down editorial photograph of an adult hand pressing a simple wooden rubber stamp onto a small open cream-paper tasting passport on a natural wood table. The passport has no writing, no letters and no grid of instructions: only a few small green botanical leaf and fruit impressions on its left page, with room for one new stamp on the right. A ceramic dish of mango slices, a whole dragon fruit and a woven wrist strap sit casually at the edge. Believable stamp contact and hand anatomy, warm daylight, tactile paper and wood. A real-life concept object, never an app screenshot or diagram."
+    },
+    {
+      "id": "07-fruit-kitchen",
+      "title": "Sáng tạo từ vị bản địa",
+      "alt": "Người hướng dẫn và khách trưởng thành cùng hoàn thiện món trái cây tại bàn workshop, hình minh họa AI.",
+      "prompt": "An intimate fruit cooking workshop in an airy temporary pavilion. A Vietnamese adult instructor in a forest green apron places pomelo segments and golden mango onto a ceramic dessert plate while two adult visitors watch and prepare their own dishes. Medium-wide candid view, clean wood worktop, small bowls, neat utensils, dragon fruit halves and natural herbs. Hygienic realistic food preparation, relaxed curious expressions, soft natural daylight and reusable materials. No branding, no signage, no performance stage."
+    },
+    {
+      "id": "08-grower-buyer",
+      "title": "Cuộc gặp mở thêm cơ hội",
+      "alt": "Người trồng và người mua trò chuyện bên bàn có xoài và bưởi trong không gian vườn, hình minh họa AI.",
+      "prompt": "A Vietnamese adult grower in a light grey work shirt and an adult buyer in a casual olive shirt having a thoughtful conversation at a simple shaded timber table near the orchard. Mangoes and pomelos sit between them, the grower gently indicates a fruit while the buyer listens. Eye-level medium two-person composition, natural friendly attention, realistic hands, warm backlight, green foliage. No handshake, no contract signing, no money, no implication of a completed deal, no laptop screen or readable papers. The image communicates meeting and understanding."
+    },
+    {
+      "id": "09-fruit-convergence",
+      "title": "Mùa Quả Hội Tụ",
+      "alt": "Các múi xoài, thanh long, bưởi và lá tạo vòng hội tụ trên nền xanh vườn, hình minh họa AI.",
+      "prompt": "A refined overhead studio still life on matte deep orchard green. A few fresh golden mango slices, dragon fruit halves with natural white flesh and black seeds, peeled pomelo segments, small longan clusters and green leaves form an open loose circular rhythm around calm empty green space. Asymmetric and organic rather than mechanically repeated. One very thin natural warm-gold thread curves softly among the produce, recalling a connected journey without glowing effects. Tactile fruit, soft controlled light and subtle shadows. A complete standalone photographic key visual, not a logo, not a slide or typography template. No words anywhere."
+    }
+  ]
+}

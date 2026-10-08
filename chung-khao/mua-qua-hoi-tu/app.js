@@ -1,4 +1,4 @@
-import { slides } from "./content.js";
+import { slides, imageStories } from "./content.js";
 import { assetsBySlide, deliverables } from "./assets-manifest.js";
 
 const stage = document.getElementById("presentation");
@@ -19,12 +19,13 @@ const pdfLink = document.getElementById("pdf-link");
 const pngFiles = document.getElementById("png-files");
 const pngFileLinks = document.getElementById("png-file-links");
 const assetStatusText = document.getElementById("asset-status-text");
-const pageFragments = new Set(["home", "story", "experience", "proposal"]);
+const pageFragments = new Set(["home", "intro-video", "story", "experience", "gallery", "proposal"]);
 
 let activeIndex = -1;
 let lastImageButton = null;
 let currentStageImage = null;
 let currentVideo = null;
+let currentVideoObserver = null;
 
 const pad = (value) => String(value).padStart(2, "0");
 
@@ -33,6 +34,35 @@ function make(tag, className, text) {
   if (className) element.className = className;
   if (text !== undefined) element.textContent = text;
   return element;
+}
+
+function appendTranscript(container, slide) {
+  if (!slide.transcript?.length) return;
+
+  const transcript = make("section", "transcript");
+  transcript.setAttribute("aria-labelledby", "transcript-title");
+  transcript.append(make("h3", "", slide.transcriptTitle || "Lời dẫn concept"));
+  transcript.querySelector("h3").id = "transcript-title";
+  const lines = make("ol", "transcript-lines");
+  for (const line of slide.transcript) {
+    const item = make("li", "");
+    item.append(make("span", "transcript-time", line.time), make("p", "", line.text));
+    lines.append(item);
+  }
+  transcript.append(lines);
+  container.append(transcript);
+}
+
+function appendNotes(container, notes) {
+  if (!notes?.length) return;
+
+  const aside = make("aside", "slide-notes");
+  aside.setAttribute("aria-label", "Ghi chú của slide");
+  aside.append(make("h3", "", "Ghi chú"));
+  const list = make("ul", "");
+  for (const note of notes) list.append(make("li", "", note));
+  aside.append(list);
+  container.append(aside);
 }
 
 function renderReading(slide) {
@@ -51,30 +81,8 @@ function renderReading(slide) {
     readingContent.append(article);
   }
 
-  if (slide.transcript?.length) {
-    const transcript = make("section", "transcript");
-    transcript.setAttribute("aria-labelledby", "transcript-title");
-    transcript.append(make("h3", "", slide.transcriptTitle || "Lời dẫn concept"));
-    transcript.querySelector("h3").id = "transcript-title";
-    const lines = make("ol", "transcript-lines");
-    for (const line of slide.transcript) {
-      const item = make("li", "");
-      item.append(make("span", "transcript-time", line.time), make("p", "", line.text));
-      lines.append(item);
-    }
-    transcript.append(lines);
-    readingContent.append(transcript);
-  }
-
-  if (slide.notes?.length) {
-    const notes = make("aside", "slide-notes");
-    notes.setAttribute("aria-label", "Ghi chú của slide");
-    notes.append(make("h3", "", "Ghi chú"));
-    const list = make("ul", "");
-    for (const note of slide.notes) list.append(make("li", "", note));
-    notes.append(list);
-    readingContent.append(notes);
-  }
+  appendTranscript(readingContent, slide);
+  appendNotes(readingContent, slide.notes);
 }
 
 function renderFallback(slide, asset, errorMessage = "") {
@@ -87,7 +95,7 @@ function renderFallback(slide, asset, errorMessage = "") {
     ? asset?.status === "approved" ? "Video intro 45 giây" : "Video intro đang được sản xuất"
     : asset?.status === "review"
       ? "Ảnh đang được rà soát"
-      : "Bản nội dung — chờ ảnh thiết kế";
+      : "Câu chuyện — ảnh chưa sẵn sàng";
   copy.append(make("p", "stage-eyebrow", label));
   const title = make("h2", "stage-title", slide.title);
   copy.append(title, make("p", "stage-summary", slide.summary));
@@ -109,17 +117,28 @@ function renderApprovedMedia(slide, asset) {
     const video = make("video", "slide-video");
     video.controls = true;
     video.playsInline = true;
-    video.preload = "metadata";
+    video.preload = "none";
     video.setAttribute("aria-label", `${slide.title} — video intro`);
     if (asset.poster && (!asset.posterStatus || asset.posterStatus === "approved")) video.poster = asset.poster;
+    let sourceAssigned = false;
+    let captionsTrack = null;
     if (asset.captions) {
-      const track = make("track", "");
-      track.kind = "captions";
-      track.srclang = "vi";
-      track.label = "Tiếng Việt";
-      track.src = asset.captions;
-      video.append(track);
+      captionsTrack = make("track", "");
+      captionsTrack.kind = "captions";
+      captionsTrack.srclang = "vi";
+      captionsTrack.label = "Tiếng Việt";
+      video.append(captionsTrack);
     }
+    const loadSource = () => {
+      if (sourceAssigned || activeIndex !== slides.indexOf(slide) || !video.isConnected) return;
+      sourceAssigned = true;
+      video.preload = "metadata";
+      if (captionsTrack) captionsTrack.src = asset.captions;
+      video.src = asset.src;
+      video.load();
+      currentVideoObserver?.disconnect();
+      currentVideoObserver = null;
+    };
     video.addEventListener("error", () => {
       if (activeIndex === slides.indexOf(slide)) {
         media.replaceWith(renderFallback(slide, asset, "Không thể tải video. Bản lời dẫn vẫn ở bên dưới."));
@@ -128,13 +147,22 @@ function renderApprovedMedia(slide, asset) {
     }, { once: true });
     currentVideo = video;
     media.append(video);
-    video.src = asset.src;
-    video.load();
+    if ("IntersectionObserver" in window) {
+      currentVideoObserver = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) loadSource();
+      });
+      currentVideoObserver.observe(media);
+      video.addEventListener("pointerdown", loadSource, { once: true });
+    } else {
+      loadSource();
+    }
     return media;
   }
 
   const image = make("img", "slide-image");
   image.alt = asset.alt;
+  if (asset.width) image.width = asset.width;
+  if (asset.height) image.height = asset.height;
   image.decoding = "async";
   image.loading = "eager";
   image.addEventListener("load", () => {
@@ -159,6 +187,8 @@ function renderApprovedMedia(slide, asset) {
 
 function renderStage(slide) {
   const asset = assetsBySlide[slide.id];
+  currentVideoObserver?.disconnect();
+  currentVideoObserver = null;
   currentStageImage = null;
   currentVideo = null;
   openImageButton.hidden = true;
@@ -211,7 +241,7 @@ function navigate(index, { historyMode = "push", announce = true } = {}) {
     else button.removeAttribute("aria-current");
   });
   setHash(slide, historyMode);
-  if (announce) navigationStatus.textContent = `Slide ${pad(activeIndex + 1)} trên ${pad(slides.length)}: ${slide.title}`;
+  if (announce) navigationStatus.textContent = `${activeIndex === 0 ? "Video" : `Ảnh ${pad(activeIndex)}`} trên hành trình: ${slide.title}`;
 }
 
 function readHash() {
@@ -231,8 +261,16 @@ function buildThumbnails() {
   for (const [index, slide] of slides.entries()) {
     const button = make("button", "thumbnail");
     button.type = "button";
-    button.setAttribute("aria-label", `Slide ${pad(index + 1)}: ${slide.title}`);
-    button.append(make("span", "thumbnail-number", pad(index + 1)), make("span", "thumbnail-title", slide.title));
+    const label = index === 0 ? "Video" : `Ảnh ${pad(index)}`;
+    button.setAttribute("aria-label", `${label}: ${slide.title}`);
+    const asset = assetsBySlide[slide.id];
+    const preview = make("img", "thumbnail-preview");
+    preview.src = index === 0 ? asset.poster : asset.src;
+    preview.alt = "";
+    preview.loading = "lazy";
+    preview.width = 160;
+    preview.height = 90;
+    button.append(preview, make("span", "thumbnail-number", label), make("span", "thumbnail-title", slide.title));
     button.addEventListener("click", () => navigate(index));
     fragment.append(button);
   }
@@ -243,11 +281,52 @@ function openImageDialog() {
   if (!currentStageImage || !currentStageImage.complete || !currentStageImage.naturalWidth) return;
   lastImageButton = openImageButton;
   const slide = slides[activeIndex];
-  dialogImage.src = currentStageImage.currentSrc || currentStageImage.src;
-  dialogImage.alt = currentStageImage.alt;
-  dialogCaption.textContent = `Slide ${pad(activeIndex + 1)} · ${slide.title}`;
+  showImage(slide, openImageButton);
+}
+
+function showImage(story, trigger) {
+  const asset = assetsBySlide[story.id];
+  lastImageButton = trigger;
+  dialogImage.src = asset.original || asset.src;
+  dialogImage.alt = asset.alt;
+  dialogCaption.textContent = story.title;
   imageDialog.showModal();
   closeImageButton.focus();
+}
+
+function buildGallery() {
+  const gallery = document.getElementById("story-gallery");
+  const fragment = document.createDocumentFragment();
+  for (const [index, story] of imageStories.entries()) {
+    const asset = assetsBySlide[story.id];
+    const article = make("article", "gallery-story");
+    const button = make("button", "gallery-image-button");
+    button.type = "button";
+    button.setAttribute("aria-label", `Xem ảnh lớn: ${story.title}`);
+    button.setAttribute("aria-haspopup", "dialog");
+    button.disabled = true;
+    const image = make("img", "gallery-image");
+    image.alt = asset.alt;
+    image.width = asset.width || 1376;
+    image.height = asset.height || 768;
+    image.loading = "lazy";
+    image.decoding = "async";
+    const error = make("p", "gallery-error", "Ảnh chưa tải được. Bạn vẫn có thể đọc câu chuyện bên dưới.");
+    error.hidden = true;
+    image.addEventListener("load", () => { button.disabled = false; }, { once: true });
+    image.addEventListener("error", () => { error.hidden = false; }, { once: true });
+    image.src = asset.src;
+    button.append(image, make("span", "gallery-open-label", "Xem ảnh lớn"));
+    button.addEventListener("click", () => showImage(story, button));
+    const copy = make("div", "gallery-story-copy");
+    copy.append(make("span", "gallery-number", pad(index + 1)), make("h3", "", story.title), make("p", "", story.summary));
+    const link = make("a", "gallery-story-link", "Đọc câu chuyện");
+    link.href = `#${story.id}`;
+    copy.append(link);
+    article.append(button, error, copy);
+    fragment.append(article);
+  }
+  gallery.replaceChildren(fragment);
 }
 
 function onPresentationKeydown(event) {
@@ -296,8 +375,7 @@ function configureDeliverables() {
     pngFileLinks.replaceChildren();
   }
 
-  const approvedPngCount = (deliverables.pngSlides || []).filter((file) => file.status === "approved" && file.src).length;
-  assetStatusText.textContent = `PDF 10 trang và ${approvedPngCount} PNG đã rà soát · video intro 45 giây đã tích hợp · phim concept mở rộng 60 giây vẫn ở mức storyboard.`;
+  assetStatusText.textContent = "9 ảnh không chữ và video intro 45 giây · PDF/PNG là hồ sơ đề xuất riêng.";
 }
 
 previousButton.addEventListener("click", () => navigate(activeIndex - 1));
@@ -313,6 +391,7 @@ window.addEventListener("popstate", readHash);
 window.addEventListener("hashchange", readHash);
 
 buildThumbnails();
+buildGallery();
 configureDeliverables();
 const initialMatch = /^#(slide-\d{2})$/.exec(location.hash);
 const initialIndex = initialMatch ? slides.findIndex((slide) => slide.id === initialMatch[1]) : -1;
