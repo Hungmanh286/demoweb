@@ -46,6 +46,10 @@ Ban tổ chức sẽ tự tạo thư mục tương ứng khi đội được đ�
 2. Sau mỗi vòng, BTC có thể **khóa quyền push** (chỉ còn đọc).
 3. Mọi thành viên cần **Accept** lời mời GitHub trước khi clone/push.
 
+## Deploy microsite lên Vercel
+
+Repo đã có cấu hình build tĩnh ở `vercel.json`. Khi import repo vào Vercel, giữ **Root Directory** là thư mục gốc (`.`); Vercel dùng `scripts/build-vercel.mjs` để đóng gói microsite tại `chung-khao/mua-qua-hoi-tu/` vào `dist/`. Không cần API key hay biến môi trường. Xem [hướng dẫn deploy và chạy local](chung-khao/mua-qua-hoi-tu/README.md#deploy-lên-vercel).
+
 ---
 
 *AI Thực Chiến · [thucchien.ai](https://thucchien.ai/)*

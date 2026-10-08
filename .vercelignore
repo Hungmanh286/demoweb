@@ -1,0 +1,11 @@
+.env
+.env.*
+.claude/
+.agents/
+.ai-log/
+.venv/
+.codex/
+.cursor/
+.gemini/
+**/node_modules/
+chung-khao/mua-qua-hoi-tu/video-production/

@@ -10,6 +10,10 @@ python3 -m http.server 8000 --bind 127.0.0.1 --directory /home/hungmanh/Document
 
 Mở <http://127.0.0.1:8000/>. Cần HTTP để trình duyệt nạp ES modules; không mở trực tiếp bằng `file://`. Microsite và viewer không cần npm, build step, API hoặc kết nối ngoài.
 
+## Deploy lên Vercel
+
+Repo có `vercel.json` ở thư mục gốc. Khi import `Hungmanh286/demoweb` vào Vercel, giữ **Root Directory** là `.` và để Vercel dùng cấu hình repo. Build chạy `node scripts/build-vercel.mjs`, xuất site tĩnh vào `dist/`; không cần API key, biến môi trường hay framework preset. Script chỉ đóng gói trang microsite, video intro, ảnh, PDF và PNG slide; không đưa source dựng video hoặc cấu hình cục bộ vào output.
+
 ## Điều khiển và media
 
 - Nút Trước/Sau và dải thumbnail chuyển giữa các slide; URL hỗ trợ `#slide-01` đến `#slide-10`, Back/Forward khôi phục vị trí.

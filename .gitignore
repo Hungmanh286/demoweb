@@ -14,6 +14,8 @@ __pycache__/
 venv/
 .agents
 .claude/
+/dist/
+/.vercel/
 
 # IDE / OS
 .vscode/
